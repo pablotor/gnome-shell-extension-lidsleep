@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-shell-extension-caffeine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-27 00:13-0300\n"
+"PO-Revision-Date: 2017-05-05 22:28+0900\n"
+"Last-Translator: Jean-Philippe Braun <eon@patapon.info>\n"
+"Language-Team: French\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-SearchPath-0: ../../..\n"
+
+#: extension.js:175
+#, fuzzy
+msgid "Suspend at lid close disabled"
+msgstr "自動サスペンドを無効にしました"
+
+#: extension.js:193
+#, fuzzy
+msgid "Suspend at lid close enabled"
+msgstr "自動サスペンドを有効にしました"
+
+#: prefs.js:42
+#, fuzzy
+msgid "Show Lidsleep in top panel"
+msgstr "Caffeine をトップバーに表示する"
+
+#: prefs.js:59
+msgid "Restore state across reboots"
+msgstr "再起動後も状態を維持する"
+
+#: prefs.js:75
+msgid "Enable notifications"
+msgstr "通知を有効にする"
+
+#: prefs.js:96
+#, fuzzy
+msgid "Applications which enable Lidsleep automatically"
+msgstr "Caffeine を自動的に有効にするアプリケーション"
+
+#: prefs.js:112
+msgid "Add application"
+msgstr "アプリケーションを追加"
+
+#: prefs.js:126
+msgid "Create new matching rule"
+msgstr "新規ルール"
+
+#: prefs.js:130
+msgid "Add"
+msgstr "追加"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:6
+msgid "Application list"
+msgstr "アプリケーションリスト"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:7
+msgid ""
+"A list of strings, each containing an application id (desktop file name)"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:11
+msgid "Store lidsleep user state"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:16
+msgid "Restore lidsleep state"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:21
+msgid "Show indicator"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:22
+msgid "Show the indicator on the top panel"
+msgstr "Caffeine をトップバーに表示する"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:26
+msgid "Show notifications"
+msgstr "通知を有効にする"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:27
+msgid "Show notifications when enabled/disabled"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:31
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:32
+msgid "Enable when a fullscreen application is running"
+msgstr "フルスクリーンアプリケーション実行時に有効にする"
+
+#~ msgid "Caffeine enabled"
+#~ msgstr "Caféine est activé"
+
+#~ msgid "Caffeine disabled"
+#~ msgstr "Caféine est désactivé"

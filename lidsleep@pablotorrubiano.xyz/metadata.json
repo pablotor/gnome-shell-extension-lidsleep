@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "shell-version": [
+    "3.36"
+  ],
+  "uuid": "lidsleep@pablotorrubiano.xyz",
+  "name": "Lidsleep",
+  "settings-schema": "org.gnome.shell.extensions.lidsleep",
+  "gettext-domain": "gnome-shell-extension-lidsleep",
+  "description": "Disable the auto suspend when lid is closed",
+  "url": "https://github.com/pablotor/gnome-shell-extension-lidsleep"
+}

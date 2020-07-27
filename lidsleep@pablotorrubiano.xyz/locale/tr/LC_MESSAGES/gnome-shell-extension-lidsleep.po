@@ -1,0 +1,106 @@
+# Caffeine Türkçe çeviri dosyası 
+# Hüseyin Karacabey <neynefes@ubuntu-tr.net>, 2017.
+# Serdar Sağlam <teknomobil@yandex.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-shell-extension-caffeine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-27 00:13-0300\n"
+"PO-Revision-Date: 2019-03-21 06:48+0300\n"
+"Last-Translator: Serdar Sağlam <teknomobil@yandex.com>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Gtranslator 3.32.0\n"
+
+#: extension.js:175
+#, fuzzy
+msgid "Suspend at lid close disabled"
+msgstr "Ekran koruyucu ve otomatik karartma kapalı"
+
+#: extension.js:193
+#, fuzzy
+msgid "Suspend at lid close enabled"
+msgstr "Ekran koruyucu ve otomatik karartma açık"
+
+#: prefs.js:42
+#, fuzzy
+msgid "Show Lidsleep in top panel"
+msgstr "Caffeine üst panelde görünsün"
+
+#: prefs.js:59
+msgid "Restore state across reboots"
+msgstr "Yeniden başlatma arasında durumu geri yükle"
+
+#: prefs.js:75
+msgid "Enable notifications"
+msgstr "Bildirimleri aktif et"
+
+#: prefs.js:96
+#, fuzzy
+msgid "Applications which enable Lidsleep automatically"
+msgstr "Kafeini otomatik olarak etkinleştiren uygulamalar"
+
+#: prefs.js:112
+msgid "Add application"
+msgstr "Uygulama ekle"
+
+#: prefs.js:126
+msgid "Create new matching rule"
+msgstr "Yeni eşleşme kuralı oluştur"
+
+#: prefs.js:130
+msgid "Add"
+msgstr "Ekle"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:6
+msgid "Application list"
+msgstr "Uygulama listesi"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:7
+msgid ""
+"A list of strings, each containing an application id (desktop file name)"
+msgstr ""
+"Her biri bir uygulama kimliği içeren bir dize listesi (masaüstü dosya adı)"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:11
+#, fuzzy
+msgid "Store lidsleep user state"
+msgstr "Kafein kullanıcı durumunu sakla"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:16
+#, fuzzy
+msgid "Restore lidsleep state"
+msgstr "Kafein durumunu geri yükle"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:21
+msgid "Show indicator"
+msgstr "Göstergeyi göster"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:22
+msgid "Show the indicator on the top panel"
+msgstr "Göstergeyi üst panelde göster"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:26
+msgid "Show notifications"
+msgstr "Bildirimleri göster"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:27
+msgid "Show notifications when enabled/disabled"
+msgstr "Aktif/Pasif olduğunda bildirimleri göster"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:31
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:32
+msgid "Enable when a fullscreen application is running"
+msgstr "Tam ekran uygulama çalıştırıldığı zaman aktif olacaktır"
+
+#~ msgid "Caffeine enabled"
+#~ msgstr "Caffeine aktif"
+
+#~ msgid "Caffeine disabled"
+#~ msgstr "Caffeine pasif"

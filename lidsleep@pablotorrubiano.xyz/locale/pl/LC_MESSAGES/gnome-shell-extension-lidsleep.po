@@ -1,0 +1,105 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-shell-extension-caffeine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-27 00:13-0300\n"
+"PO-Revision-Date: 2016-10-02 17:24+0100\n"
+"Last-Translator: Piotr Wittchen <piotr@wittchen.biz.pl>\n"
+"Language-Team: Polish\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Vim\n"
+"X-Poedit-SearchPath-0: ../../..\n"
+
+#: extension.js:175
+#, fuzzy
+msgid "Suspend at lid close disabled"
+msgstr "Automatycze wstrzymywanie i wygaszacz ekranu wyłączone"
+
+#: extension.js:193
+#, fuzzy
+msgid "Suspend at lid close enabled"
+msgstr "Automatyczne wstrzymywanie i wygaszacz ekranu włączone"
+
+#: prefs.js:42
+#, fuzzy
+msgid "Show Lidsleep in top panel"
+msgstr "Pokazuj Caffeine w górnym panelu"
+
+#: prefs.js:59
+msgid "Restore state across reboots"
+msgstr ""
+
+#: prefs.js:75
+msgid "Enable notifications"
+msgstr "Włącz notyfikacje"
+
+#: prefs.js:96
+#, fuzzy
+msgid "Applications which enable Lidsleep automatically"
+msgstr "Aplikacje, które aktywują Caffeine automatycznie"
+
+#: prefs.js:112
+msgid "Add application"
+msgstr "Dodaj aplikację"
+
+#: prefs.js:126
+msgid "Create new matching rule"
+msgstr "Stwórz nową regułę dopasowania"
+
+#: prefs.js:130
+msgid "Add"
+msgstr "Dodaj"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:6
+#, fuzzy
+msgid "Application list"
+msgstr "Dodaj aplikację"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:7
+msgid ""
+"A list of strings, each containing an application id (desktop file name)"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:11
+msgid "Store lidsleep user state"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:16
+msgid "Restore lidsleep state"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:21
+msgid "Show indicator"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:22
+#, fuzzy
+msgid "Show the indicator on the top panel"
+msgstr "Pokazuj Caffeine w górnym panelu"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:26
+#, fuzzy
+msgid "Show notifications"
+msgstr "Włącz notyfikacje"
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:27
+msgid "Show notifications when enabled/disabled"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:31
+#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:32
+msgid "Enable when a fullscreen application is running"
+msgstr "Włącz kiedy aplikacja jest uruchomiona w trybie pełnoekranowym"
+
+#~ msgid "Caffeine enabled"
+#~ msgstr "Caffeine włączone"
+
+#~ msgid "Caffeine disabled"
+#~ msgstr "Caffeine wyłączone"
