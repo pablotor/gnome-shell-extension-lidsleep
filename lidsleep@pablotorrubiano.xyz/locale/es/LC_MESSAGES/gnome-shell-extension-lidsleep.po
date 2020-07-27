@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-caffeine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-27 10:57-0300\n"
+"POT-Creation-Date: 2020-07-27 12:20-0300\n"
 "PO-Revision-Date: 2015-11-28 21:06-0300\n"
 "Last-Translator: Pablo J Torrubiano <contact@pablotorrubiano.xyz>\n"
 "Language-Team: Spanish\n"
@@ -18,12 +18,12 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SearchPath-0: ../../..\n"
 
-#: extension.js:172
+#: extension.js:173
 #, fuzzy
 msgid "Auto suspend at lid close disabled"
 msgstr "Auto suspensión al cierre de la tapa deshabilitado"
 
-#: extension.js:189
+#: extension.js:190
 #, fuzzy
 msgid "Auto suspend at lid close enabled"
 msgstr "Auto suspensión al cierre de la tapa habilitado"
