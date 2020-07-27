@@ -1,15 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-shell-extension-caffeine\n"
+"Project-Id-Version: gnome-shell-extension-Lidsleep\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-27 00:13-0300\n"
+"POT-Creation-Date: 2020-07-27 11:03-0300\n"
 "PO-Revision-Date: 2017-06-08 00:10+0100\n"
-"Last-Translator: Roman Spirgi <bigant@fedoraproject.org>\n"
+"Last-Translator: Pablo J Torrubiano <contact@pablotorrubiano.xyz>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Original-Translator: Roman Spirgi <bigant@fedoraproject.org>\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
@@ -17,20 +18,20 @@ msgstr ""
 "X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SearchPath-0: ../../..\n"
 
-#: extension.js:175
+#: extension.js:172
 #, fuzzy
-msgid "Suspend at lid close disabled"
-msgstr "Bereitschaftsmodus und Bildschirmschoner deaktiviert"
+msgid "Auto suspend at lid close disabled"
+msgstr "Standby-Modus beim Zuklappen deaktiviert"
 
-#: extension.js:193
+#: extension.js:189
 #, fuzzy
-msgid "Suspend at lid close enabled"
-msgstr "Bereitschaftsmodus und Bildschirmschoner aktiviert"
+msgid "Auto suspend at lid close enabled"
+msgstr "Standby-Modus beim Zuklappen aktiviert"
 
 #: prefs.js:42
 #, fuzzy
 msgid "Show Lidsleep in top panel"
-msgstr "Caffeine in der oberen Leiste anzeigen"
+msgstr "Lidsleep in der oberen Leiste anzeigen"
 
 #: prefs.js:59
 msgid "Restore state across reboots"
@@ -43,7 +44,7 @@ msgstr "Benachrichtigungen aktivieren"
 #: prefs.js:96
 #, fuzzy
 msgid "Applications which enable Lidsleep automatically"
-msgstr "Anwendungen, welche Caffeine automatisch aktivieren"
+msgstr "Anwendungen, welche Lidsleep automatisch aktivieren"
 
 #: prefs.js:112
 msgid "Add application"
@@ -70,13 +71,13 @@ msgstr ""
 
 #: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:11
 #, fuzzy
-msgid "Store lidsleep user state"
-msgstr "Caffeines Benutzereinstellung speichern"
+msgid "Store Lidsleep user state"
+msgstr "Lidsleeps Benutzereinstellung speichern"
 
 #: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:16
 #, fuzzy
-msgid "Restore lidsleep state"
-msgstr "Caffeines Zustand wiederherstellen"
+msgid "Restore Lidsleep state"
+msgstr "Lidsleeps Zustand wiederherstellen"
 
 #: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:21
 msgid "Show indicator"
@@ -84,7 +85,7 @@ msgstr "Indikator anzeigen"
 
 #: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:22
 msgid "Show the indicator on the top panel"
-msgstr "Caffeine-Indikator in der oberen Leiste anzeigen"
+msgstr "Lidsleep-Indikator in der oberen Leiste anzeigen"
 
 #: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:26
 msgid "Show notifications"
@@ -94,13 +95,8 @@ msgstr "Benachrichtigungen aktivieren"
 msgid "Show notifications when enabled/disabled"
 msgstr "Benachrichtigungen anzeigen, wenn aktiviert/ deaktiviert"
 
-#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:31
-#: schemas/org.gnome.shell.extensions.lidsleep.gschema.xml:32
-msgid "Enable when a fullscreen application is running"
-msgstr "Aktivieren, sobald eine Anwendung im Vollbildmodus läuft"
+#~ msgid "Lidsleep enabled"
+#~ msgstr "Lidsleep aktiviert"
 
-#~ msgid "Caffeine enabled"
-#~ msgstr "Caffeine aktiviert"
-
-#~ msgid "Caffeine disabled"
-#~ msgstr "Caffeine deaktiviert"
+#~ msgid "Lidsleep disabled"
+#~ msgstr "Lidsleep deaktiviert"

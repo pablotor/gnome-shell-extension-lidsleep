@@ -8,12 +8,12 @@
     </key>
     <key type="b" name="user-enabled">
         <default>false</default>
-        <summary>Store lidsleep user state</summary>
+        <summary>Store Lidsleep user state</summary>
         <description></description>
     </key>
     <key type="b" name="restore-state">
         <default>false</default>
-        <summary>Restore lidsleep state</summary>
+        <summary>Restore Lidsleep state</summary>
         <description></description>
     </key>
     <key type="b" name="show-indicator">
@@ -25,11 +25,6 @@
         <default>true</default>
         <summary>Show notifications</summary>
         <description>Show notifications when enabled/disabled</description>
-    </key>
-    <key type="b" name="enable-fullscreen">
-        <default>true</default>
-        <summary>Enable when a fullscreen application is running</summary>
-        <description>Enable when a fullscreen application is running</description>
     </key>
   </schema>
 </schemalist>

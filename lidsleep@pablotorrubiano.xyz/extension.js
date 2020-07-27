@@ -150,19 +150,16 @@ const Lidsleep = new Lang.Class({
             this._freedesktopProxy.InhibitRemote('handle-lid-switch',
                 app_id, "Inhibit by %s".format(IndicatorName), 'block',
                 (fileDescriptor) => {
-
                     if (fileDescriptor) {
                         let inhibitor = new GLib.MainLoop(null, false);
                         this._inhibitor = inhibitor;
                         inhibitor.run();
                         return;
-                    }
-                    else {
+                    } else {
                         logError("Inhibit returned null");
                         return;
                     }
-                }
-            );
+                });
         }
         if (this._last_app == 'user')
             this._settings.set_boolean(USER_ENABLED_KEY, true);
@@ -172,7 +169,7 @@ const Lidsleep = new Lang.Class({
             this._state = true;
             this._icon.gicon = Gio.icon_new_for_string(Me.path + '/icons/' + EnabledIcon +'.svg');;
             if (this._settings.get_boolean(SHOW_NOTIFICATIONS_KEY) && !this.inFullscreen)
-                Main.notify(_("Suspend at lid close disabled"));
+                Main.notify(_("Auto suspend at lid close disabled"));
         }
     },
 
@@ -186,11 +183,10 @@ const Lidsleep = new Lang.Class({
             if (this._apps.length === 0) {
                 this._state = false;
                 this._inhibitor.quit();
-                this._inhibitor.unref();
                 this._inhibitor = undefined;
                 this._icon.gicon = Gio.icon_new_for_string(Me.path + '/icons/' + DisabledIcon +'.svg');;
                 if(this._settings.get_boolean(SHOW_NOTIFICATIONS_KEY))
-                    Main.notify(_("Suspend at lid close enabled"));
+                    Main.notify(_("Auto suspend at lid close enabled"));
             }
         }
     },
@@ -219,8 +215,13 @@ const Lidsleep = new Lang.Class({
         let app = this._windowTracker.get_window_app(window);
         if (app) {
             let app_id = app.get_id();
-            if (this._apps.indexOf(app_id) != -1)
+            log("app_id: %s".format(app_id));
+            log("_apps: $s".format(this._apps));
+            if (this._apps.indexOf(app_id) != -1){
                 this.removeInhibit(app_id);
+                log("Encontro la app.");
+
+              }
         }
     },
 
