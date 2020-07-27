@@ -1,6 +1,7 @@
 # This extension is maintained by Pablo J Torrubiano!
 
 ## gnome-shell-extension-slidsleep
+## CAUTION Still an experimental and unstable version. Can freeze gnome-shell
 
 When the moon is full auto suspend at lid close is disable.
 
