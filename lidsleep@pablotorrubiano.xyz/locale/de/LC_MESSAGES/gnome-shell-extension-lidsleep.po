@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-Lidsleep\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-27 12:20-0300\n"
+"POT-Creation-Date: 2020-08-03 12:20-0300\n"
 "PO-Revision-Date: 2017-06-08 00:10+0100\n"
 "Last-Translator: Pablo J Torrubiano <contact@pablotorrubiano.xyz>\n"
 "Language-Team: German\n"
@@ -18,12 +18,12 @@ msgstr ""
 "X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SearchPath-0: ../../..\n"
 
-#: extension.js:173
+#: extension.js:184
 #, fuzzy
 msgid "Auto suspend at lid close disabled"
 msgstr "Standby-Modus beim Zuklappen deaktiviert"
 
-#: extension.js:190
+#: extension.js:201
 #, fuzzy
 msgid "Auto suspend at lid close enabled"
 msgstr "Standby-Modus beim Zuklappen aktiviert"

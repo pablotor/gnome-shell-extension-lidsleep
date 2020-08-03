@@ -21,16 +21,18 @@
 
 'use strict';
 
-const Lang = imports.lang;
 const St = imports.gi.St;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
-const Main = imports.ui.main;
-const Mainloop = imports.mainloop;
-const PanelMenu = imports.ui.panelMenu;
+const GObject = imports.gi.GObject;
 const Shell = imports.gi.Shell;
-const MessageTray = imports.ui.messageTray;
 const Atk = imports.gi.Atk;
+
+const Main = imports.ui.main;
+const PanelMenu = imports.ui.panelMenu;
+const MessageTray = imports.ui.messageTray;
+
+const Mainloop = imports.mainloop;
 const Config = imports.misc.config;
 
 const INHIBIT_APPS_KEY = 'inhibit-apps';
@@ -41,6 +43,8 @@ const RESTORE_KEY = 'restore-state';
 
 const Gettext = imports.gettext.domain('gnome-shell-extension-lidsleep');
 const _ = Gettext.gettext;
+
+const ExtensionUtils = imports.misc.extensionUtils;
 
 const Me = imports.misc.extensionUtils.getCurrentExtension();
 const Convenience = Me.imports.convenience;
@@ -66,24 +70,31 @@ const EnabledIcon = 'my-lidsleep-on-symbolic';
 let LidsleepIndicator;
 let ShellVersion = parseInt(Config.PACKAGE_VERSION.split(".")[1]);
 
-const Lidsleep = new Lang.Class({
-    Name: IndicatorName,
-    Extends: PanelMenu.Button,
+// For shell version < 3.30 Lidsleep is a native class
+var Lidsleep = class Lidsleep extends PanelMenu.Button {
 
-    _init: function(metadata, params) {
-        this.parent(null, IndicatorName);
-        this.actor.accessible_role = Atk.Role.TOGGLE_BUTTON;
-
-        this._settings = Convenience.getSettings();
-        this._settings.connect("changed::" + SHOW_INDICATOR_KEY, Lang.bind(this, function() {
+    _init() {
+        super._init(null, IndicatorName);
+        var actor;
+        // PanelMenu.Button.actor methods moved to PanelMenu.Button for shell version > 3.30
+        // Convenience methods moved to ExtensionUtils for shell version > 3.30
+        if (ShellVersion > 30) {
+            actor = this;
+            this._settings = ExtensionUtils.getSettings();
+        }
+        else {
+            actor = this.actor;
+            this._settings = Convenience.getSettings();
+        }
+        actor.accessible_role = Atk.Role.TOGGLE_BUTTON;
+        this._settings.connect("changed::" + SHOW_INDICATOR_KEY, () => {
             if (this._settings.get_boolean(SHOW_INDICATOR_KEY))
-                this.actor.show();
+                actor.show();
             else
-                this.actor.hide();
-        }));
+                actor.hide();
+        });
         if (!this._settings.get_boolean(SHOW_INDICATOR_KEY))
-            this.actor.hide();
-
+            actor.hide();
 
         this._freedesktopProxy = new DBusFreedesktopProxy(Gio.DBus.system,
                                                   "org.freedesktop.login1",
@@ -103,9 +114,9 @@ const Lidsleep = new Lang.Class({
         }
 
         // Connect after so the handler from ShellWindowTracker has already run
-        this._windowCreatedId = this._display.connect_after('window-created', Lang.bind(this, this._mayInhibit));
+        this._windowCreatedId = this._display.connect_after('window-created', this._mayInhibit.bind(this));
         let shellwm = global.window_manager;
-        this._windowDestroyedId = shellwm.connect('destroy', Lang.bind(this, this._mayUninhibit));
+        this._windowDestroyedId = shellwm.connect('destroy', this._mayUninhibit.bind(this));
 
         this._icon = new St.Icon({
             style_class: 'system-status-icon'
@@ -118,10 +129,10 @@ const Lidsleep = new Lang.Class({
         this._last_app = "";
         this._apps = [];
 
-
-        this.actor.add_actor(this._icon);
-        this.actor.add_style_class_name('panel-status-button');
-        this.actor.connect('button-press-event', Lang.bind(this, this.toggleState));
+        actor.add_actor(this._icon);
+        actor.add_style_class_name('panel-status-button');
+        actor.connect('button-press-event', this.toggleState.bind(this));
+        actor.connect('touch-event', this.toggleState.bind(this));
 
         // Restore user state
         if (this._settings.get_boolean(USER_ENABLED_KEY) && this._settings.get_boolean(RESTORE_KEY)) {
@@ -129,23 +140,23 @@ const Lidsleep = new Lang.Class({
         }
 
         // List current windows to check if we need to inhibit
-        global.get_window_actors().map(Lang.bind(this, function(window) {
+        global.get_window_actors().map( window => {
             this._mayInhibit(null, window.meta_window, null);
-        }));
-    },
+        });
+    }
 
-    toggleState: function() {
+    toggleState() {
         if (this._state) {
-            this._apps.map(Lang.bind(this, function(app_id) {
+            this._apps.map( app_id => {
                 this.removeInhibit(app_id);
-            }));
+            });
         }
         else {
             this.addInhibit('user');
         }
-    },
+    }
 
-    addInhibit: function(app_id) {
+    addInhibit(app_id) {
         if (this._inhibitor == null){
             this._freedesktopProxy.InhibitRemote('handle-lid-switch',
                 app_id, "Inhibit by %s".format(IndicatorName), 'block',
@@ -172,9 +183,9 @@ const Lidsleep = new Lang.Class({
             if (this._settings.get_boolean(SHOW_NOTIFICATIONS_KEY) && !this.inFullscreen)
                 Main.notify(_("Auto suspend at lid close disabled"));
         }
-    },
+    }
 
-    removeInhibit: function(app_id) {
+    removeInhibit(app_id) {
         let index = this._apps.indexOf(app_id);
         if (index != -1) {
             if (this._apps[index] == 'user')
@@ -190,18 +201,18 @@ const Lidsleep = new Lang.Class({
                     Main.notify(_("Auto suspend at lid close enabled"));
             }
         }
-    },
+    }
 
 
-    _mayInhibit: function(display, window, noRecurse) {
+    _mayInhibit(display, window, noRecurse) {
         let app = this._windowTracker.get_window_app(window);
         if (!app) {
             if (!noRecurse) {
                 // window is not tracked yet
-                Mainloop.idle_add(Lang.bind(this, function() {
+                Mainloop.idle_add( () => {
                     this._mayInhibit(display, window, true);
                     return false;
-                }));
+                });
             }
             return;
         }
@@ -209,9 +220,9 @@ const Lidsleep = new Lang.Class({
         let apps = this._settings.get_strv(INHIBIT_APPS_KEY);
         if (apps.indexOf(app_id) != -1)
             this.addInhibit(app_id);
-    },
+    }
 
-    _mayUninhibit: function(shellwm, actor) {
+    _mayUninhibit(shellwm, actor) {
         let window = actor.meta_window;
         let app = this._windowTracker.get_window_app(window);
         if (app) {
@@ -220,13 +231,13 @@ const Lidsleep = new Lang.Class({
                 this.removeInhibit(app_id);
             }
         }
-    },
+    }
 
-    destroy: function() {
+    destroy() {
         // remove all inhibitors
-        this._apps.map(Lang.bind(this, function(app_id) {
+        this._apps.map( app_id => {
             this.removeInhibit(app_id);
-        }));
+        });
         // disconnect from signals
 
         if (this._windowCreatedId) {
@@ -237,12 +248,26 @@ const Lidsleep = new Lang.Class({
             global.window_manager.disconnect(this._windowDestroyedId);
             this._windowDestroyedId = 0;
         }
-        this.parent();
+        super.destroy();
     }
-});
+};
+
+// For shell version > 3.30 re-wrapping our subclass in `GObject.registerClass()`
+if (ShellVersion > 30) {
+    Lidsleep = GObject.registerClass(
+        {GTypeName: IndicatorName},
+        Lidsleep
+    );
+}
+
 
 function init(extensionMeta) {
-    Convenience.initTranslations();
+    // Convenience methods moved to ExtensionUtils for shell version > 3.30 
+    if (ShellVersion > 30)
+        ExtensionUtils.initTranslations();
+    else
+        Convenience.initTranslations();
+
     let theme = imports.gi.Gtk.IconTheme.get_default();
     theme.append_search_path(extensionMeta.path + "/icons");
 }
